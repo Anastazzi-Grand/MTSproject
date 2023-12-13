@@ -1,4 +1,4 @@
-package service;
+package ru.mts;
 import java.math.BigDecimal;
 
 /**
