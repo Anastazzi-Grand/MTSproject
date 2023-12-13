@@ -1,17 +1,19 @@
 package service;
+import java.math.BigDecimal;
 
 /**
  * Класс "Покупка" - хранит информацию о покупке товара
  * */
+
 public class Purchase {
     private int countOfProducts; // количество купленного товара
-    private double sumOfProducts; // сумма товара
-    private double discount; // скидка на товар
+    private BigDecimal sumOfProducts; // сумма товара
+    private BigDecimal discount; // скидка на товар
 
     public Purchase(int countOfProducts, double sumOfProducts, double discount) {
         this.countOfProducts = countOfProducts;
-        this.sumOfProducts = sumOfProducts;
-        this.discount = discount;
+        this.sumOfProducts = BigDecimal.valueOf(sumOfProducts);
+        this.discount = BigDecimal.valueOf(discount);
     }
     public int getCountOfProducts() {
         return countOfProducts;
@@ -21,20 +23,20 @@ public class Purchase {
         this.countOfProducts = countOfProducts;
     }
 
-    public double getSumOfProducts() {
+    public BigDecimal getSumOfProducts() {
         return sumOfProducts;
     }
 
     public void setSumOfProducts(double sumOfProducts) {
-        this.sumOfProducts = sumOfProducts;
+        this.sumOfProducts = BigDecimal.valueOf(sumOfProducts);
     }
 
-    public double getDiscount() {
+    public BigDecimal getDiscount() {
         return discount;
     }
 
     public void setDiscount(double discount) {
-        this.discount = discount;
+        this.discount = BigDecimal.valueOf(discount);
     }
 
     /**
@@ -42,11 +44,11 @@ public class Purchase {
      * @param purchase объект покупки
      * */
     public static void calculateFinalCostOfPurchase(Purchase purchase) {
-        double amountWithoutDiscount = purchase.countOfProducts * purchase.sumOfProducts;
-        double amountWithDiscount = amountWithoutDiscount - (amountWithoutDiscount * (purchase.discount / 100));
+        BigDecimal amountWithoutDiscount = purchase.getSumOfProducts().multiply(BigDecimal.valueOf(purchase.getCountOfProducts()));
+        BigDecimal discountMultiplier = BigDecimal.valueOf(1).subtract(purchase.getDiscount().divide(BigDecimal.valueOf(100)));
+        BigDecimal amountWithDiscount = amountWithoutDiscount.multiply(discountMultiplier).setScale(2, BigDecimal.ROUND_HALF_UP);
 
         System.out.println("Сумма за покупку без скидки: " + amountWithoutDiscount);
-        System.out.printf("Сумма за покупку со скидкой: %.2f", amountWithDiscount);
-        System.out.println();
+        System.out.println("Сумма за покупку со скидкой: " + amountWithDiscount);
     }
 }
