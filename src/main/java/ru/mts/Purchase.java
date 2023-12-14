@@ -1,5 +1,6 @@
 package ru.mts;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * Класс "Покупка" - хранит информацию о покупке товара
@@ -46,7 +47,7 @@ public class Purchase {
     public static void calculateFinalCostOfPurchase(Purchase purchase) {
         BigDecimal amountWithoutDiscount = purchase.getSumOfProducts().multiply(BigDecimal.valueOf(purchase.getCountOfProducts()));
         BigDecimal discountMultiplier = BigDecimal.valueOf(1).subtract(purchase.getDiscount().divide(BigDecimal.valueOf(100)));
-        BigDecimal amountWithDiscount = amountWithoutDiscount.multiply(discountMultiplier).setScale(2, BigDecimal.ROUND_HALF_UP);
+        BigDecimal amountWithDiscount = amountWithoutDiscount.multiply(discountMultiplier).setScale(2, RoundingMode.HALF_UP);
 
         System.out.println("Сумма за покупку без скидки: " + amountWithoutDiscount);
         System.out.println("Сумма за покупку со скидкой: " + amountWithDiscount);
