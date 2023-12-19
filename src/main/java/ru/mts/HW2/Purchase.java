@@ -1,4 +1,4 @@
-package ru.mts;
+package ru.mts.HW2;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
