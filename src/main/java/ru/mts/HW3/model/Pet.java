@@ -1,9 +1,8 @@
 package ru.mts.HW3.model;
 
-import java.math.BigDecimal;
-
+/**
+ * Абстрактный класс для питомцев
+ * */
 public abstract class Pet extends AbstractAnimal{
-    public Pet(String breed, String name, BigDecimal cost, String character) {
-        super(breed, name, cost, character);
-    }
+    public Pet() {}
 }

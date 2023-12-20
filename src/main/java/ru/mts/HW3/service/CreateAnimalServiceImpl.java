@@ -1,7 +1,5 @@
 package ru.mts.HW3.service;
 
-import ru.mts.HW3.model.AbstractAnimal;
-
 public class CreateAnimalServiceImpl implements CreateAnimalService {
     /**
      * Создает 10 уникальных животных с помощью do-while.

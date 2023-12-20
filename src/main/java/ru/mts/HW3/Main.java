@@ -12,22 +12,22 @@ public class Main {
 
 //        Вывод
 //        Создание 10 животных по умолчанию:
-//        Создано животное: BobDog - Labradorcost: 2014.12
-//        Создано животное: BobDog - Labradorcost: 2014.12
-//        Создано животное: WowWolf - Arcticcost: 6534.17
-//        Создано животное: FafShark - Great Whitecost: 5140.25
-//        Создано животное: FafShark - Great Whitecost: 5140.25
-//        Создано животное: BobDog - Labradorcost: 2014.12
-//        Создано животное: KisaCat - Siberiancost: 1234.14
-//        Создано животное: FafShark - Great Whitecost: 5140.25
-//        Создано животное: FafShark - Great Whitecost: 5140.25
-//        Создано животное: WowWolf - Arcticcost: 6534.17
+//        Создано животное: KisaCat - Siberian cost: 1234.14
+//        Создано животное: WowWolf - Arctic cost: 4152.14
+//        Создано животное: BobDog - Labrador cost: 2415.14
+//        Создано животное: FafShark - Great White cost: 5123.14
+//        Создано животное: FafShark - Great White cost: 5123.14
+//        Создано животное: FafShark - Great White cost: 5123.14
+//        Создано животное: BobDog - Labrador cost: 2415.14
+//        Создано животное: WowWolf - Arctic cost: 4152.14
+//        Создано животное: FafShark - Great White cost: 5123.14
+//        Создано животное: FafShark - Great White cost: 5123.14
 //
 //        Создание 5 животных с помощью перегруженного метода:
-//        Создано животное: FafShark - Great Whitecost: 5140.25
-//        Создано животное: BobDog - Labradorcost: 2014.12
-//        Создано животное: BobDog - Labradorcost: 2014.12
-//        Создано животное: WowWolf - Arcticcost: 6534.17
-//        Создано животное: BobDog - Labradorcost: 2014.12
+//        Создано животное: FafShark - Great White cost: 5123.14
+//        Создано животное: FafShark - Great White cost: 5123.14
+//        Создано животное: FafShark - Great White cost: 5123.14
+//        Создано животное: KisaCat - Siberian cost: 1234.14
+//        Создано животное: WowWolf - Arctic cost: 4152.14
     }
 }

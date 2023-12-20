@@ -1,13 +1,22 @@
 package ru.mts.HW3.model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Wolf extends Predator{
-    public Wolf(String breed, String name, BigDecimal cost, String character) {
-        super(breed, name, cost, character);
-    }
-
+    /**
+     * Конструктор для создания волка с заданным породой и именем
+     * Использует значения по умолчанию для стоимости и характера
+     * @param breed порода волка
+     * @param name имя волка
+     */
     public Wolf(String breed, String name) {
-        super(breed, name, new BigDecimal("6534.17435"), "Angry");
+        this(breed, name, new BigDecimal("4152.14435"), "Angry");
+    }
+    public Wolf(String breed, String name, BigDecimal cost, String character) {
+        this.breed = breed;
+        this.name = name;
+        this.cost = cost.setScale(2, RoundingMode.HALF_UP);
+        this.character = character;
     }
 }

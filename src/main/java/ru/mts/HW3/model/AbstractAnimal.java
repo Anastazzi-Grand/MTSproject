@@ -1,21 +1,17 @@
 package ru.mts.HW3.model;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
-// Абстрактный класс для представления животных
+/**
+ * Абстрактный класс для представления животных
+ * */
 public abstract class AbstractAnimal implements Animal {
     protected String breed; // порода
     protected String name; // имя
     protected BigDecimal cost; // цена в магазине
     protected String character; // характер
 
-    public AbstractAnimal(String breed, String name, BigDecimal cost, String character) {
-        this.breed = breed;
-        this.name = name;
-        this.cost = cost.setScale(2, RoundingMode.HALF_UP);
-        this.character = character;
-    }
+    public AbstractAnimal() {}
 
     @Override
     public String getBreed() {

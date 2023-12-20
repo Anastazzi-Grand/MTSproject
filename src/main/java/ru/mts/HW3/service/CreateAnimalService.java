@@ -1,16 +1,18 @@
 package ru.mts.HW3.service;
 
 import ru.mts.HW3.model.*;
-
-import java.math.BigDecimal;
 import java.util.Random;
 
-// Интерфейс для создания новых животных и метод для создания 10 уникальных животных
+/**
+ * Интерфейс для создания новых животных и метод для создания 10 уникальных животных
+ * */
 public interface CreateAnimalService {
+    int MAX_COUNT_TYPE_ANIMAL = 4;
+
     /**
      * Создает 10 уникальных животных с помощью while.
      */
-    default void create10UniqueAnimals() {
+    default void createTenUniqueAnimals() {
         int count = 0;
         while (count < 10) {
             createAnimal();
@@ -22,10 +24,9 @@ public interface CreateAnimalService {
     * Создает уникальное животное.
     */
     default void createAnimal() {
-        AbstractAnimal animal;
+        AbstractAnimal animal = null;
         Random random = new Random();
-        BigDecimal cost = new BigDecimal(random.nextInt(1000) + 500);
-        int randomNumber = random.nextInt(4);
+        int randomNumber = random.nextInt(MAX_COUNT_TYPE_ANIMAL);
         switch (randomNumber) {
             case 0:
                 animal = new Cat("Siberian", "KisaCat");
@@ -39,9 +40,7 @@ public interface CreateAnimalService {
             case 3:
                 animal = new Shark("Great White", "FafShark");
                 break;
-            default:
-                animal = new Cat("Siberian", "Kitty", cost, "Playful");
         }
-        System.out.println("Создано животное: " + animal.getName() + " - " + animal.getBreed() + "cost: " + animal.getCost());
+        System.out.println("Создано животное: " + animal.getName() + " - " + animal.getBreed() + " cost: " + animal.getCost());
     }
 }
