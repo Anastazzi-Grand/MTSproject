@@ -8,7 +8,7 @@ import java.util.Random;
 import static ru.mts.HW4.factory.AnimalType.*;
 
 /**
- * Интерфейс для создания новых животных и метод для создания 10 уникальных животных
+ * интерфейс для создания новых животных и метод для создания 10 уникальных животных
  * */
 public interface CreateAnimalService {
     int MAX_COUNT_TYPE_ANIMAL = 4;

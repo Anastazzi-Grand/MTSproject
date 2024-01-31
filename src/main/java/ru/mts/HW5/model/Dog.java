@@ -1,9 +1,8 @@
-package ru.mts.HW4.model;
+package ru.mts.HW5.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
-import java.time.Month;
 
 public class Dog extends Pet {
     /**

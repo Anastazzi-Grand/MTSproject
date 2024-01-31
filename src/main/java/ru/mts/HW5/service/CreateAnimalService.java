@@ -1,7 +1,11 @@
-package ru.mts.HW3.service;
+package ru.mts.HW5.service;
 
-import ru.mts.HW3.model.*;
+import ru.mts.HW5.factory.AnimalFactory;
+import ru.mts.HW5.model.*;
+
 import java.util.Random;
+
+import static ru.mts.HW5.factory.AnimalType.*;
 
 /**
  * интерфейс для создания новых животных и метод для создания 10 уникальных животных
@@ -12,35 +16,38 @@ public interface CreateAnimalService {
     /**
      * Создает 10 уникальных животных с помощью while.
      */
-    default void createTenUniqueAnimals() {
-        int count = 0;
-        while (count < 10) {
-            createAnimal();
-            count++;
+    default AbstractAnimal[] createTenUniqueAnimals() {
+        AbstractAnimal[] animals = new AbstractAnimal[10];
+        int i = 0;
+        while (i < animals.length) {
+            animals[i] = createAnimal();
+            i++;
         }
+        return animals;
     }
 
     /**
     * Создает уникальное животное.
     */
-    default void createAnimal() {
+    default AbstractAnimal createAnimal() {
         AbstractAnimal animal = null;
+        AnimalFactory animalFactory = new AnimalFactory();
         Random random = new Random();
         int randomNumber = random.nextInt(MAX_COUNT_TYPE_ANIMAL);
         switch (randomNumber) {
             case 0:
-                animal = new Cat("Siberian", "KisaCat");
+                animal = animalFactory.createAnimal(CAT);
                 break;
             case 1:
-                animal = new Dog("Labrador", "BobDog");
+                animal = animalFactory.createAnimal(DOG);
                 break;
             case 2:
-                animal = new Wolf("Arctic", "WowWolf");
+                animal = animalFactory.createAnimal(WOLF);
                 break;
             case 3:
-                animal = new Shark("Great White", "FafShark");
+                animal = animalFactory.createAnimal(SHARK);
                 break;
         }
-        System.out.println("Создано животное: " + animal.getName() + " - " + animal.getBreed() + " cost: " + animal.getCost());
+        return animal;
     }
 }
