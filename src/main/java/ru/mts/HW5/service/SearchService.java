@@ -1,6 +1,7 @@
-package ru.mts.HW4.service;
+package ru.mts.HW5.service;
 
-import ru.mts.HW4.model.AbstractAnimal;
+import ru.mts.HW5.model.AbstractAnimal;
+import ru.mts.HW5.model.Animal;
 
 /**
  * интерфейс для поиска по массиву с заданными условиями
@@ -27,6 +28,7 @@ public interface SearchService {
      * Вывод дубликатов животных
      *
      * @param animals Массив животных
+     * @return
      */
-    void findDuplicate(AbstractAnimal[] animals);
+    Animal[] findDuplicate(AbstractAnimal[] animals);
 }

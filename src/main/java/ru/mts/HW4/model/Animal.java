@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Интерфейс Animal с методами для получения информации о животных
+ * интерфейс Animal с методами для получения информации о животных
  * */
 public interface Animal {
     /**
